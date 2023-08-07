@@ -17,12 +17,12 @@ def Get_Label_Maps(map_path):
 
 def Load_All_Needed_Pickles():
     '''Function to load all the pickles needed for inference'''
-    cost_of_study = Get_Pkl('./Scalers/cost_of_study_Scaler.pkl')
-    hours_per_week_university_work = Get_Pkl('./Scalers/hours_per_week_university_work_Scaler.pkl')
-    total_device_hours = Get_Pkl('./Scalers/total_device_hours_Scaler.pkl')
-    total_social_media_hours = Get_Pkl('./Scalers/total_social_media_hours_Scaler.pkl')
-    exercise_per_week = Get_Pkl('./Scalers/exercise_per_week_Scaler.pkl')
-    work_hours_per_week = Get_Pkl('./Scalers/work_hours_per_week_Scaler.pkl')
+    cost_of_study = Get_Pkl('cost_of_study_Scaler.pkl')
+    hours_per_week_university_work = Get_Pkl('hours_per_week_university_work_Scaler.pkl')
+    total_device_hours = Get_Pkl('total_device_hours_Scaler.pkl')
+    total_social_media_hours = Get_Pkl('total_social_media_hours_Scaler.pkl')
+    exercise_per_week = Get_Pkl('exercise_per_week_Scaler.pkl')
+    work_hours_per_week = Get_Pkl('work_hours_per_week_Scaler.pkl')
     Dict_Scalers = {
         'cost_of_study': cost_of_study,
         'hours_per_week_university_work': hours_per_week_university_work,
@@ -32,16 +32,16 @@ def Load_All_Needed_Pickles():
         'work_hours_per_week': work_hours_per_week
     }
 
-    known_disabilities = Get_Pkl('./Label Encoders/known_disabilities_LabelEncoder.pkl')
-    stress_in_general = Get_Pkl('./Label Encoders/stress_in_general_LabelEncoder.pkl')
-    well_hydrated = Get_Pkl('./Label Encoders/well_hydrated_LabelEncoder.pkl')
-    ethnic_group = Get_Pkl('./Label Encoders/ethnic_group_LabelEncoder.pkl')
-    home_country = Get_Pkl('./Label Encoders/home_country_LabelEncoder.pkl')
-    course_of_study = Get_Pkl('./Label Encoders/course_of_study_LabelEncoder.pkl')
-    personality_type = Get_Pkl('./Label Encoders/personality_type_LabelEncoder.pkl')
-    institution_country = Get_Pkl('./Label Encoders/institution_country_LabelEncoder.pkl')
-    year_of_birth = Get_Pkl('./Label Encoders/year_of_birth_LabelEncoder.pkl')
-    student_type_location = Get_Pkl('./Label Encoders/student_type_location_LabelEncoder.pkl')
+    known_disabilities = Get_Pkl('known_disabilities_LabelEncoder.pkl')
+    stress_in_general = Get_Pkl('stress_in_general_LabelEncoder.pkl')
+    well_hydrated = Get_Pkl('well_hydrated_LabelEncoder.pkl')
+    ethnic_group = Get_Pkl('ethnic_group_LabelEncoder.pkl')
+    home_country = Get_Pkl('home_country_LabelEncoder.pkl')
+    course_of_study = Get_Pkl('course_of_study_LabelEncoder.pkl')
+    personality_type = Get_Pkl('personality_type_LabelEncoder.pkl')
+    institution_country = Get_Pkl('institution_country_LabelEncoder.pkl')
+    year_of_birth = Get_Pkl('year_of_birth_LabelEncoder.pkl')
+    student_type_location = Get_Pkl('student_type_location_LabelEncoder.pkl')
     Dict_LabelEncoders = {
         'known_disabilities': known_disabilities,
         'stress_in_general': stress_in_general,
@@ -55,10 +55,10 @@ def Load_All_Needed_Pickles():
         'student_type_location' : student_type_location
     }
 
-    alcohol_consumption = Get_Label_Maps('./Label Maps/alcohol_consumption.npy')
-    diet = Get_Label_Maps('./Label Maps/diet.npy')
-    quality_of_life = Get_Label_Maps('./Label Maps/quality_of_life.npy')
-    year_of_study = Get_Label_Maps('./Label Maps/year_of_study.npy')
+    alcohol_consumption = Get_Label_Maps('alcohol_consumption.npy')
+    diet = Get_Label_Maps('diet.npy')
+    quality_of_life = Get_Label_Maps('quality_of_life.npy')
+    year_of_study = Get_Label_Maps('year_of_study.npy')
     Dict_LabelMaps = {
         'alcohol_consumption': alcohol_consumption,
         'diet': diet,
@@ -66,9 +66,9 @@ def Load_All_Needed_Pickles():
         'year_of_study': year_of_study
     }
 
-    Model = Get_Pkl('./Models/SMOTE_BernoulliNB()_Unoptimized.pkl')
+    Model = Get_Pkl('SMOTE_BernoulliNB()_Unoptimized.pkl')
 
-    mental_health_issues_map = Get_Label_Maps('./Label Maps/mental_health_issues_map.npy')
+    mental_health_issues_map = Get_Label_Maps('mental_health_issues_map.npy')
 
     return Dict_Scalers, Dict_LabelEncoders, Dict_LabelMaps, Model
 

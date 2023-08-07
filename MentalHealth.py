@@ -72,6 +72,10 @@ def Load_All_Needed_Pickles():
 
     return Dict_Scalers, Dict_LabelEncoders, Dict_LabelMaps, Model
 
+# # Define the input form
+# st.title(Mental Health GUI')
+# st.subheader('Select an option')
+
 def Preprocess_Inference_Dataset(Inference_DF,Dict_Scalers,Dict_LabelEncoders,Dict_LabelMaps):
     '''Function to preprocess the inference dataset'''
     for col in Inference_DF.select_dtypes(include=['int']).columns:
@@ -165,6 +169,9 @@ def RecordInputted(record_id):
 
 def main():
     '''Main function'''
+    # Define the input form
+    st.title(Mental Health GUI')
+    st.subheader('Select an option')
     upload_file = st.radio("How would you like to input your data?", ["Upload File", "Enter Record ID"])
     if upload_file == "Upload File":
         file = st.file_uploader("Upload your file")
